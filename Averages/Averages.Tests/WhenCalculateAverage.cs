@@ -6,7 +6,7 @@ namespace Averages.Tests;
 public class WhenCalculateAverage
 {
     [TestMethod]
-    public void SingleInputProduceSameResult()
+    public void SingleInputProducesSameResult()
     {
         string[] inputs = { "1" };
         double result = AverageCalculator.ArithmeticMean(inputs);
@@ -19,5 +19,13 @@ public class WhenCalculateAverage
         string[] inputs = { "1", "2", "3" };
         double result = AverageCalculator.ArithmeticMean(inputs);
         Assert.AreEqual(2.0, result, 1E-14);
+    }
+
+    [TestMethod]
+    public void EmptyInputProducesErrorMsg()
+    {
+        string[] inputs = {};
+        double result = AverageCalculator.ArithmeticMean(inputs);
+        Assert.AreEqual(0.0, result, 1E-14);       
     }
 }
