@@ -20,4 +20,12 @@ public class UnitTestOperators
 
         Assert.AreEqual((i11, i12, i13, i14, i15, i16, i17), (-2, 0, 3, 3, 2, 0, 0));
     }
+
+    [TestMethod]
+    public void TestBoolArithmetic()
+    {
+        var (b1, b2, b3, b4, b5) = Operators.BoolArithmetic();
+
+        Assert.AreEqual((b1, b2, b3, b4, b5), (false, false, true, false, false));
+    }
 }

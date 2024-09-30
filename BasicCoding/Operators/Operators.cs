@@ -44,4 +44,10 @@ public static class Operators
         return (i11, i12, i13, i14, i15, i16, i17);
     }
 
+    public static (bool, bool, bool, bool, bool) BoolArithmetic()
+    {
+        string s = null;
+
+        return (s?.Length > 10, true && false, true || false, !true, s is not null);
+    }
 }
