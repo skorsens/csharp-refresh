@@ -50,4 +50,12 @@ public static class Operators
 
         return (s?.Length > 10, true && false, true || false, !true, s is not null);
     }
+
+    public static (string, string, int, int) Relational()
+    {
+        string s1 = null;
+        string s2 = "not null string";
+
+        return (s1 ?? "null string", s2 ?? "null string", s1?.Length ?? 0, s2?.Length ?? 0);
+    }
 }

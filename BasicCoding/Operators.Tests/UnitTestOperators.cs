@@ -28,4 +28,12 @@ public class UnitTestOperators
 
         Assert.AreEqual((b1, b2, b3, b4, b5), (false, false, true, false, false));
     }
+
+    [TestMethod]
+    public void TestRelational()
+    {
+        var (s1, s2, i1, i2) = Operators.Relational();
+
+        Assert.AreEqual((s1, s2, i1, i2), ("null string", "not null string", 0, 15));
+    }
 }
