@@ -43,4 +43,19 @@ public class UnitTestRecords
         Assert.AreEqual(3, r1.F1);
         Assert.AreEqual(3, r1.F2);
     }
+
+    [TestMethod]
+    public void TestRecordClass()
+    {
+        RecordClassPerson p1 = new("n1", "sn1");
+        RecordClassPerson p2 = new("n2", "sn2");
+        RecordClassPerson p3 = p1;
+
+        Assert.AreEqual("n1", p1.Name);
+        Assert.AreEqual("sn1", p1.Surname);
+        Assert.AreEqual("n2", p2.Name);
+        Assert.AreEqual("sn2", p2.Surname);
+        Assert.AreEqual(p1, p3);
+        Assert.IsFalse(object.ReferenceEquals(p1,p2));
+    }
 }
