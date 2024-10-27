@@ -19,6 +19,8 @@ public class UnitTestCounter
         Counter c1 = new(1);
         var c2 = new Counter(2);
 
+        Counter.ResetTotalCnt();
+        
         Assert.AreEqual(0, Counter.TotalCnt);
         Assert.AreEqual(1, c1.GetNext());
         Assert.AreEqual(2, c2.GetNext());

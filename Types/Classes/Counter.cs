@@ -3,13 +3,13 @@ namespace Classes;
 
 public class Counter(int _cnt)
 {
-    private static int _totalCnt = 0;
-
     public int GetNext()
     {
-        _totalCnt++;
+        TotalCnt++;
         return _cnt++;
     }
 
-    public static int TotalCnt => _totalCnt;
+    public static int TotalCnt { get; private set; } = 0;
+
+    public static void ResetTotalCnt() => TotalCnt = 0;
 }
