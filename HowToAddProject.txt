@@ -1,0 +1,12 @@
+mkdir <SolutionName>
+cd <SolutionName>
+
+dotnet new sln
+
+dotnet new console -o <ProjectName>
+dotnet new mstest -o <ProjectName>.Tests
+
+dotnet sln add ./<ProjectName>/<ProjectName>.csproj
+dotnet sln add ./<ProjectName>.Tests/<ProjectName>.Tests.csproj
+
+dotnet add ./<ProjectName>.Tests/<ProjectName>.Tests.csproj reference ./<ProjectName>/<ProjectName>.csproj
